@@ -1,0 +1,13 @@
+*.pyc
+*.log
+.settings
+.classpath
+.git
+.project
+.pydevproject
+.DS_Store
+.ropeproject
+*.db
+*.pid
+*.json
+celerybeat-schedule
