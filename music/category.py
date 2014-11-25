@@ -46,5 +46,5 @@ def add(data):
 
 if __name__ == '__main__':
     django.setup()
-#    add(data=[{'id': 1, 'name': '流行音乐'}])
+#    add(data=[{'name': '流行音乐'}, {'name': '校园名谣'}, {'name': '欧美经典'}])
     print get_categories()
