@@ -6,4 +6,5 @@ urlpatterns = patterns('',
     # url(r'^blog/', include('blog.urls')),
 
     url(r'^get_songs_by_category/', 'api.views.get_songs_by_category'),
+    url(r'^get_all_cagetories/', 'api.views.get_all_categories'),
 )
