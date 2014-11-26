@@ -26,8 +26,7 @@ def get_songs_by_category(request):
     '''
     if request.method == 'GET':
         req = Request(request)
-        raw_data = req.DATA
-        category = int(raw_data.get('category', default=1))
+        category = int(req.QUERY_PARAMS.get('category', default=1))
         data = get_songs(category=category)
         return JSONResponse(data=data, status=200)
     else:
