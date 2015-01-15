@@ -34,6 +34,7 @@ ALLOWED_HOSTS = ['*']
 INSTALLED_APPS = (
     'music',
     'api',
+    'user',
 )
 
 MIDDLEWARE_CLASSES = (
