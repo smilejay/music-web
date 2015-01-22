@@ -5,6 +5,14 @@ params: gender   （默认值是“男”）
 return: 满足歌手性别条件的歌曲列表。
 
 
+根据歌曲名搜索歌曲。
+URL: /api/song/search
+method: GET
+params: keyword, num
+        keyword 关键字；num 歌曲的个数，默认值是 5。
+return: 返回包含keyword的歌曲列表。
+
+
 添加或更新一个用户的个人信息。
 URL: /api/user/add_user
 method: POST
