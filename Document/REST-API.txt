@@ -1,3 +1,10 @@
+根据歌手性别查询歌曲。
+URL: /api/get_songs_by_gender
+method: GET
+params: gender   （默认值是“男”）
+return: 满足歌手性别条件的歌曲列表。
+
+
 添加或更新一个用户的个人信息。
 URL: /api/user/add_user
 method: POST
