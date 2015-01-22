@@ -1,0 +1,14 @@
+添加或更新一个用户的个人信息。
+URL: /api/user/add_user
+method: POST
+params: openid, nickname, gender, figureurl, city, force
+只有openid是必须的；当force=1时，将会强制用POST数据覆盖数据库中记录，只建议在App本身的修改个人信息的界面处使用。
+默认情况下，不要写force参数（或者写force=0也行），如果DB中已有这个openid，则只更新其figureurl这个字段。
+return: {'openid': openid} 若出错，则 {'openid': null}
+
+
+查询一个用户的个人信息。
+URL: /api/user/get_user
+method: GET
+params: openid
+return: 该用户的个人信息
