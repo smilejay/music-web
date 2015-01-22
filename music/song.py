@@ -29,6 +29,21 @@ def get_songs(category=1):
     return ret
 
 
+def get_songs_by_gender(gender='男'):
+    '''
+    @summary: get songs by singer's gender.
+    @return: a list of songs.
+    '''
+    ret = []
+    s = Song.objects.filter(gender=gender)
+    s_s = SongSerializer(s, many=True)
+    if s:
+        for i in s_s.data:
+            ret.append(i)
+    return ret
+
+
+
 def add(data):
     '''
     @summary: add song record(s).
@@ -51,3 +66,4 @@ if __name__ == '__main__':
     django.setup()
 #    add(data=[{'name': '十年', 'singer': '陈奕迅', 'category': 1, 'song_file': '/mp3/1.mp3'}])
     print get_songs(category=1)
+    print get_songs_by_gender(gender='男')
