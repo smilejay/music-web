@@ -34,8 +34,10 @@ def add_user(request):
         req = Request(request)
         data = req.DATA
         force = data.get('force', default=False)
-        if force:
+        if force and force != '0':
             force = True
+        else:
+            force = False
         openid = add_update_user(data, force=force)
         return JSONResponse(data={'openid': openid}, status=200)
     else:
