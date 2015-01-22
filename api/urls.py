@@ -8,5 +8,6 @@ urlpatterns = patterns('',
     url(r'^get_songs_by_category/', 'api.views.get_songs_by_category'),
     url(r'^get_songs_by_gender/', 'api.views.get_songs_by_singer_gender'),
     url(r'^get_all_categories/', 'api.views.get_all_categories'),
+    url(r'^song/', include('api.song_urls')),
     url('^user/', include('api.user_urls')),
 )
