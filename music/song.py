@@ -69,7 +69,7 @@ def search_songs(keyword, num=5):
     @return: a list of the songs.
     '''
     ret = []
-    s = Song.objects.filter(name__contains=keyword)
+    s = Song.objects.filter(name__icontains=keyword)
     s_s = SongSerializer(s, many=True)
     if s:
         ret = s_s.data
