@@ -80,6 +80,25 @@ def search_songs(keyword, num=5):
     return ret
 
 
+def search_songs_by_singer(keyword, num=5):
+    '''
+    @summary: search songs by a keyword in the song name.
+    @param keyword: the keyword.
+    @param num: the number of the songs which will be returned.
+    @return: a list of the songs.
+    '''
+    ret = []
+    s = Song.objects.filter(singer__icontains=keyword)
+    s_s = SongSerializer(s, many=True)
+    if s:
+        ret = s_s.data
+    if len(ret) <= num:
+        pass
+    else:
+        ret = ret[0:num]
+    return ret
+
+
 if __name__ == '__main__':
     django.setup()
 #    add(data=[{'name': '十年', 'singer': '陈奕迅', 'category': 1, 'song_file': '/mp3/1.mp3'}])
