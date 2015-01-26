@@ -9,6 +9,7 @@ from music.models import Song
 from music.serializers import SongSerializer
 from music.category import get_categories
 from lib.logger import CarLogger
+from operator import itemgetter
 
 logger = CarLogger().getLogger()
 
@@ -98,6 +99,16 @@ def search_songs_by_singer(keyword, num=5):
         ret = ret[0:num]
     return ret
 
+def all_singers():
+    '''
+    @summary: get all the singers of the songs.
+    @return: a list of singers' names.
+    '''
+    ret = []
+    singers = Song.objects.values('singer').distinct()
+    ret = sorted([i['singer'] for i in singers])
+    return ret
+
 
 if __name__ == '__main__':
     django.setup()
@@ -105,3 +116,4 @@ if __name__ == '__main__':
     print get_songs(category=1)
     print get_songs_by_gender(gender='男')
     print search_songs(keyword='一', num=3)
+    print all_singers()
