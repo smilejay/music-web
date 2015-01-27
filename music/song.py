@@ -30,7 +30,7 @@ def get_songs(category=1):
     return ret
 
 
-def get_songs_by_gender(gender='男'):
+def get_songs_by_gender(gender=1):
     '''
     @summary: get songs by singer's gender.
     @return: a list of songs.

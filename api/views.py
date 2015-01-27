@@ -42,7 +42,7 @@ def get_songs_by_singer_gender(request):
     '''
     if request.method == 'GET':
         req = Request(request)
-        gender = req.QUERY_PARAMS.get('gender', default='男')
+        gender = int(req.QUERY_PARAMS.get('gender', default=1))
         data = get_songs_by_gender(gender=gender)
         return JSONResponse(data=data, status=200)
     else:
