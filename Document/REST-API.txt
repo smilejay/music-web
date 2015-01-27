@@ -21,6 +21,12 @@ params: keyword, num
 return: 返回包含keyword的歌手的歌曲列表。
 
 
+根据歌手名搜索歌曲。
+URL: /api/song/get_singers
+method: GET
+params: 无
+return: 返回所有歌手的名称。
+
 
 添加或更新一个用户的个人信息。
 URL: /api/user/add_user
